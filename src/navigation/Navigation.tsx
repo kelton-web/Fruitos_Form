@@ -5,11 +5,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Wallpaper from "../screens/wallpaper/Wallpaper";
 import Home from "../screens/home/Home";
+import Login from "../screens/login/Login";
 
 export type RootParams = {
   Wallpaper: undefined;
   Home: undefined;
   RootTab: undefined;
+  Login: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootParams>();
@@ -30,6 +32,7 @@ const Navigation = () => {
       <Stack.Navigator initialRouteName='Wallpaper'>
         <Stack.Screen name="RootTab" component={RootTab} options={{ headerShown: false }}/>
         <Stack.Screen name="Wallpaper" component={Wallpaper} options={{ headerShown: false }}/>
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
